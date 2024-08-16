@@ -1,5 +1,5 @@
 import "./App.css";
-import { Aboutme } from "./components/AboutMe/aboutme";
+import { Aboutme } from "./components/AboutMe/Aboutme";
 import { Resume } from "./components/Resume/Resume";
 import { Home } from "./components/Home/Home";
 import { Navbar } from "./components/Navbar/Navbar";

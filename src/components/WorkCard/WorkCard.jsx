@@ -1,7 +1,6 @@
+import { Data } from "./Data/Data";
 
-import { Data } from "./Data/data";
-
-export const WorkCard = ({title, data, icon}) => {
+export const WorkCard = ({ title, data, icon }) => {
   return (
     <div className="w-96 bg-[#f5f5f5] rounded-xl font-bigjohn-regular p-4 pb-1 border">
       <div className="flex items-center gap-2">
@@ -9,7 +8,9 @@ export const WorkCard = ({title, data, icon}) => {
         <h1 className="text-xl font-bold">{title}</h1>
       </div>
       <hr className="my-2" />
-      {data.map((item) => (<Data data={item}/>))}
+      {data.map((item) => (
+        <Data data={item} />
+      ))}
     </div>
   );
 };
