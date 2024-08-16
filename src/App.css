@@ -1,0 +1,115 @@
+html {
+  font-size: 8px;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+.font-edu {
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-optical-sizing: auto;
+}
+.font-inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+.font-playfair {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+}
+
+@font-face {
+  font-family: "BigJohn-Bold";
+  src: url("./fonts/BigJohnPRO-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "BigJohn-Light";
+  src: url("./fonts/BigJohnPRO-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "BigJohn-Regular";
+  src: url("./fonts/BigJohnPRO-Regular.otf") format("opentype");
+}
+
+.font-bigjohn-bold {
+  font-family: "BigJohn-Bold", sans-serif;
+  font-optical-sizing: auto;
+}
+.font-bigjohn-light {
+  font-family: "BigJohn-Light", sans-serif;
+  font-optical-sizing: auto;
+}
+.font-bigjohn-regular {
+  font-family: "BigJohn-Regular", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.text-outline {
+  -webkit-text-stroke: 2px black;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 0px #000, 2px 2px 0px #000, 3px 3px 0px #000,
+    4px 4px 0px #000, 5px 5px 0px #000, 6px 6px 0px #000, 7px 7px 0px #000,
+    8px 8px 0px #000;
+}
+
+.image-animation {
+  animation: movex linear 120s infinite;
+}
+
+@keyframes movex {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-13rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* @keyframes rotate {
+  100% {
+    transform: rotateX(20deg) rotateY(30deg);
+  }
+}
+
+.rotate-text {
+  animation: rotate 1s ease forwards;
+} */
+
+/* .text-shadow {
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+} */
+
+
