@@ -1,5 +1,5 @@
 
-import { Data } from "./Data/data";
+import { Data } from "./Data/Data";
 
 export const WorkCard = ({title, data, icon}) => {
   return (
