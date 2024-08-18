@@ -25,7 +25,7 @@ function App() {
   };
 
   return (
-    <div className="px-12">
+    <div className="px-12 select-none">
       <Navbar
         scrollToSection={scrollToSection}
         refs={{

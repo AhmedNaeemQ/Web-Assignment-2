@@ -39,7 +39,7 @@ export const Work = () => {
         Education & Work Experience
       </h1>
 
-      <div className="flex justify-evenly">
+      <div className="flex justify-evenly gap-1">
         <WorkCard title="Education" data={education} icon={edu} />
         <WorkCard title="Work Experience" data={experience} icon={exp} />
       </div>

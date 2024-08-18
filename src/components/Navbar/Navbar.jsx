@@ -21,7 +21,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
         Ahmed Naeem
       </h1>
 
-      <ul className="font-bigjohn-regular flex gap-20 h-full">
+      <ul className="font-bigjohn-regular flex gap-12 lg:gap-20 h-full">
         {navItems.map((item) => (
           <button
             onClick={() => navigate(item)}

@@ -32,19 +32,6 @@ html {
   }
 }
 
-.font-edu {
-  font-family: "Edu VIC WA NT Beginner", cursive;
-  font-optical-sizing: auto;
-}
-.font-inter {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-}
-.font-playfair {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-}
-
 @font-face {
   font-family: "BigJohn-Bold";
   src: url("./fonts/BigJohnPRO-Bold.otf") format("opentype");

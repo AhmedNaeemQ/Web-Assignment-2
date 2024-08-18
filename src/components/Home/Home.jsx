@@ -19,16 +19,16 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="py-8 h-screen relative">
+    <div className="py-8 pb-60 xl:h-screen relative">
       <h1
         style={{ transform: `rotateX(${rotation}deg) rotateY(${rotation}deg)` }}
-        className="font-bigjohn-bold uppercase text-8xl mb-8 mt-32 text-outline text-shadow text-white"
+        className="font-bigjohn-bold uppercase text-7xl mb-8 mt-32 text-outline text-shadow text-white"
       >
         Ahmed Naeem
       </h1>
       <h2
         style={{ transform: `rotateX(${rotation}deg) rotateY(${rotation}deg)` }}
-        className="font-bigjohn-regular uppercase text-6xl mt-8 "
+        className="font-bigjohn-regular uppercase text-6xl mt-8 leading-[4.5rem] lg:leading-none"
       >
         {" "}
         <span className="font-bigjohn-bold text-white text-outline text-shadow">
