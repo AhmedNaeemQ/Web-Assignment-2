@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import image from "../../assets/img.png";
+// import coding from "../../assets/coding.gif";
 
 export const Home = () => {
   const [rotation, setRotation] = useState(0);
@@ -36,7 +37,11 @@ export const Home = () => {
         </span>{" "}
         Web Developer
       </h2>
-      <img className="absolute right-0 bottom-0 h-80 w-60 image-animation" src={image} />
+      {/* <img className="absolute left-0 bottom-0 -z-10 h-64" src={coding}/> */}
+      <img
+        className="absolute right-0 bottom-0 h-80 w-60 image-animation"
+        src={image}
+      />
     </div>
   );
 };

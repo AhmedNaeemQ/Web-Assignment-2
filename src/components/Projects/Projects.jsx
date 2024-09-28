@@ -57,8 +57,9 @@ export const Projects = () => {
     <div className="mb-16">
       <h1 className="font-bigjohn-regular text-4xl mb-10">Projects</h1>
       <div className="flex flex-wrap justify-center gap-14">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <Card
+            key={index}
             title={project.title}
             description={project.description}
             image={project.image}

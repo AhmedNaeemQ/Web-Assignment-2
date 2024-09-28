@@ -22,8 +22,9 @@ export const Navbar = ({ scrollToSection, refs }) => {
       </h1>
 
       <ul className="font-bigjohn-regular flex gap-12 lg:gap-20 h-full">
-        {navItems.map((item) => (
+        {navItems.map((item, index) => (
           <button
+            key={index}
             onClick={() => navigate(item)}
             className="relative group h- overflow-hidden"
           >

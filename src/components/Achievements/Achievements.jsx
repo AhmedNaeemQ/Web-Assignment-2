@@ -9,7 +9,8 @@ export const Achivements = () => {
     {
       logo: deans,
       title: "Dean's List",
-      description: "Achieved the Dean's List distinction at FAST University for outstanding academic performance in the BS Computer Science program, demonstrating a strong commitment to excellence and consistent high achievement throughout my studies.",
+      description:
+        "Achieved the Dean's List distinction at FAST University for outstanding academic performance in the BS Computer Science program, demonstrating a strong commitment to excellence and consistent high achievement throughout my studies.",
     },
     {
       logo: mlsa,
@@ -36,8 +37,9 @@ export const Achivements = () => {
       <h1 className="text-4xl">Awards & Certifications</h1>
 
       <div className="flex flex-wrap justify-around mt-8">
-        {data.map((data) => (
+        {data.map((data, index) => (
           <Card
+            key={index}
             logo={data.logo}
             title={data.title}
             description={data.description}

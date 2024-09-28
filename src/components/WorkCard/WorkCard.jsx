@@ -8,8 +8,8 @@ export const WorkCard = ({ title, data, icon }) => {
         <h1 className="text-xl font-bold">{title}</h1>
       </div>
       <hr className="my-2" />
-      {data.map((item) => (
-        <Data data={item} />
+      {data.map((item, index) => (
+        <Data key={index} data={item} />
       ))}
     </div>
   );
