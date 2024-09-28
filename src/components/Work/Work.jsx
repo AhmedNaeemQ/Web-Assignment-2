@@ -26,7 +26,13 @@ export const Work = () => {
 
   const experience = [
     {
-      title: "Software Development",
+      title: "Associate Software Engineer",
+      location: "Rhodium Tech",
+      date: "08/2024 - Present",
+      description: "",
+    },
+    {
+      title: "Software Development (Internship)",
       location: "Rhodium Tech",
       date: "07/2024 - 08/2024",
       description: "",
