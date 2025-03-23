@@ -1,3 +1,4 @@
+import Form from "./Form/Form";
 import { SocialCard } from "./SocialCard/SocialCard";
 
 export const Contact = () => {
@@ -12,6 +13,7 @@ export const Contact = () => {
       <div className="flex justify-center my-8">
         <SocialCard />
       </div>
+        <Form />
     </div>
   );
 };

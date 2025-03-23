@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 
 import image from "../../assets/img.png";
+import { useUserDetails } from "../../context/UserDetails";
 // import coding from "../../assets/coding.gif";
 
 export const Home = () => {
   const [rotation, setRotation] = useState(0);
+  const {userDetails} = useUserDetails();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +27,7 @@ export const Home = () => {
         style={{ transform: `rotateX(${rotation}deg) rotateY(${rotation}deg)` }}
         className="font-bigjohn-bold uppercase text-7xl mb-8 mt-32 text-outline text-shadow text-white"
       >
-        Ahmed Naeem
+        {userDetails.name || "Ahmed Naeem"}
       </h1>
       <h2
         style={{ transform: `rotateX(${rotation}deg) rotateY(${rotation}deg)` }}
@@ -33,9 +35,9 @@ export const Home = () => {
       >
         {" "}
         <span className="font-bigjohn-bold text-white text-outline text-shadow">
-          Full-Stack
+          {userDetails.role.split(" ")[0] || "Full-Stack"}
         </span>{" "}
-        Web Developer
+        {userDetails.role.split(" ")[1] || "Web Developer"}
       </h2>
       {/* <img className="absolute left-0 bottom-0 -z-10 h-64" src={coding}/> */}
       <img

@@ -13,27 +13,30 @@ import coding from "./assets/coding.gif";
 import img from "./assets/img.png";
 import Loader from "./components/Loader/Loader";
 import FontFaceObserver from "fontfaceobserver";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import DataEntry from "./components/DataEntry/DataEntry";
+import { UserDetailsProvider } from "./context/UserDetails";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const preloadImage = new Image();
     preloadImage.src = img;
 
-    // Observe the custom fonts
     const fontBold = new FontFaceObserver("BigJohn-Bold");
     const fontLight = new FontFaceObserver("BigJohn-Light");
     const fontRegular = new FontFaceObserver("BigJohn-Regular");
 
-    // Check if the document and fonts are loaded
     Promise.all([
       document.fonts.ready,
       fontBold.load(),
       fontLight.load(),
       fontRegular.load(),
       new Promise((resolve) => {
-        preloadImage.onload = resolve; // Resolve when the image is loaded
+        preloadImage.onload = resolve;
       }),
     ])
       .then(() => {
@@ -56,43 +59,75 @@ function App() {
   };
 
   return (
-    <>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <div className="px-12 select-none">
-          <Navbar
-            scrollToSection={scrollToSection}
-            refs={{
-              homeRef,
-              skillsRef,
-              workRef,
-              resumeRef,
-              contactRef,
-            }}
+    <UserDetailsProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<DataEntry />} />
+          <Route
+            path="/portfolio"
+            element={
+              <div className={`${darkMode && "bg-black text-white"}`}>
+                {isLoading ? (
+                  <Loader />
+                ) : (
+                  <div className="px-12 select-none">
+                    <Navbar
+                      scrollToSection={scrollToSection}
+                      refs={{
+                        homeRef,
+                        skillsRef,
+                        workRef,
+                        resumeRef,
+                        contactRef,
+                      }}
+                    />
+                    <label className="absolute top-24 right-4 flex items-center cursor-pointer">
+                      <div className="relative">
+                        <input
+                          type="checkbox"
+                          className="sr-only"
+                          checked={darkMode}
+                          onChange={() => setDarkMode(!darkMode)}
+                        />
+                        <div className="block bg-gray-600 w-14 h-8 rounded-full"></div>
+                        <div
+                          className={`absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition ${
+                            darkMode ? "transform translate-x-full bg-black" : ""
+                          }`}
+                        ></div>
+                      </div>
+                      <div className="ml-3 text-gray-700 font-medium">
+                        {darkMode ? "Dark Mode" : "Light Mode"}
+                      </div>
+                    </label>
+                    <div ref={homeRef}>
+                      <Home />
+                    </div>
+                    <Aboutme />
+                    <div ref={skillsRef}>
+                      <Skills />
+                    </div>
+                    <Projects />
+                    <div ref={workRef}>
+                      <Work />
+                    </div>
+                    <Achivements />
+                    <div ref={resumeRef}>
+                      <Resume />
+                    </div>
+                    <div ref={contactRef}>
+                      <Contact />
+                    </div>
+                    <img className="mx-auto" src={coding} />
+                    <Footer />
+                  </div>
+                )}
+              </div>
+            }
           />
-          <div ref={homeRef}>
-            <Home />
-          </div>
-          <Aboutme />
-          <div ref={skillsRef}>
-            <Skills />
-          </div>
-          <Projects />
-          <div ref={workRef}>
-            <Work />
-          </div>
-          <Achivements />
-          <div ref={resumeRef}>
-            <Resume />
-          </div>
-          <div ref={contactRef}>
-            <Contact />
-          </div>
-          <img className="mx-auto" src={coding} />
-        </div>
-      )}
-    </>
+        </Routes>
+      </Router>
+    </UserDetailsProvider>
   );
 }
 
